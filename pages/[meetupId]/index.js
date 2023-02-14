@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
   client.close();
 
   return {
-    fallback: false, //setting to false means path supports all meetupId.If set to true nextJs will try to create a page for unsupported id as well.
+    fallback: 'blocking', //setting to false means path supports all meetupId.If set to true nextJs will try to create a page for unsupported id as well.
     paths: meetups.map((meetup) => ({
       params: {
         meetupId: meetup._id.toString(),
